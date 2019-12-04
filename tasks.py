@@ -6,10 +6,6 @@ from celery import shared_task
 from django.shortcuts import get_object_or_404
 from tablib import Dataset
 
-from campaigns.models import Recipient, RecipientGroup, RecipientResource
-from importer.models import CsvFile
-
-
 @shared_task
 def import_csv(file_pk, values, resource):
     """ Get file and its path, after try to import data and test the dataset.
