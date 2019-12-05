@@ -3,7 +3,7 @@ from django import forms
 from import_export.resources import Resource
 
 
-class CsvCleanForm(forms.Form):
+class ResourceFieldsForm(forms.Form):
     resource = Resource
     field = forms.ChoiceField(label="")
 

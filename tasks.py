@@ -6,7 +6,6 @@ from celery import shared_task
 from django.shortcuts import get_object_or_404
 from tablib import Dataset
 
-from campaigns.models import Recipient, RecipientGroup, RecipientResource
 from importer.models import CsvFile
 
 
@@ -37,12 +36,11 @@ def import_csv(file_pk, values, resource):
 
     try:
         os.remove(full_path)
-    
     except FileNotFoundError:
         print("File not Found")
 
     try:
-        
+
         result = import_resource.import_data(
             dataset, dry_run=False)  # Actually import now
 

@@ -8,8 +8,8 @@ from importer.models import CsvFile
 # Create ymur views here.
 
 
-class ConfirmCSVImport(FormView):
-
+class ResourceImportView(FormView):
+    ''' Retrieve CSV file, with form we can change headers before import resources '''
     form_class = None
 
     resource_model = None
@@ -64,4 +64,3 @@ class ConfirmCSVImport(FormView):
         import_csv.delay(self.kwargs['pk'], values, self.resource_model)
 
         return super().form_valid(form)
-
