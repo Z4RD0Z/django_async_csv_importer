@@ -5,7 +5,6 @@ import os
 from celery import shared_task
 from django.shortcuts import get_object_or_404
 from tablib import Dataset
-
 from importer.models import CsvFile
 
 
@@ -14,8 +13,8 @@ def import_csv(file_pk, values, resource):
     """ Get file and its path, after try to import data and test the dataset.
     If it's right import dataset in database.
 
-    :param file_pk : send by post in ConfirmCSVImport.
-    :param values: send by formset in ConfirmCSVImport, new headers values.
+    :param file_pk : send by post in ResourceImportView.
+    :param values: send by formset in ResourceImportView, new headers values.
     :return the import result """
 
     import_resource = resource()

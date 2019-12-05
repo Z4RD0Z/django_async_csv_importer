@@ -9,7 +9,9 @@ from importer.models import CsvFile
 
 
 class ResourceImportView(FormView):
-    ''' Retrieve CSV file, with form we can change headers before import resources '''
+    ''' Retrieve CSV file, 
+    with form we can change headers before import resources '''
+
     form_class = None
 
     resource_model = None
